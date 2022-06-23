@@ -29,18 +29,30 @@ const section = document.getElementsByTagName("section");
 const sideNavUl = document.getElementById("side-ul");
 const sideNavLinks = document.getElementsByClassName("side-link");
 // hover link
-
 const sideNavLi = document.getElementsByClassName("side-nav-list-item");
 
+// content container style
+const contentContainer = document.getElementsByClassName("content-container");
+for (let i = 0; i < contentContainer.length; i++) {
+  contentContainer[i].style.padding = "20px";
+}
 
+// bullet point container style
+const bulletContainer = document.getElementsByClassName("bullet-container");
+for (let i = 0; i < bulletContainer.length; i++) {
+  bulletContainer[i].style.backgroundColor = jsYellow;
+  bulletContainer[i].style.color = grey;
+}
+// code container style
+const codeContainer = document.getElementsByClassName("code-container");
+for (let i = 0; i < codeContainer.length; i++) {
+  codeContainer[i].style.backgroundColor = grey;
+  codeContainer[i].style.color = jsYellow;
+}
 
 // Responsive optimisation
 // use a case to determine styles
 // run the case when the window size changes
-
-
-
-
 
 if (window.innerWidth > 0) {
   // content layout
@@ -77,9 +89,6 @@ if (window.innerWidth > 0) {
   const mainWidth = window.innerWidth - 200;
   main[0].style.width = mainWidth + "px";
   // Sections
-  for (let i = 0; i < section.length; i++) {
-    section[i].style.padding = "50px 20px";
-  }
 }
 
 if (window.innerWidth > 600) {
