@@ -3,12 +3,23 @@ const jsYellow = "#F6F200";
 const darkYellow = "#ADAA02";
 const grey = "#151514";
 
-// Font
-const fontTags = "p, a, span, h1, h2, h3, h4, h5, h6";
+// Font - Assign font family to all font
+const fontTags = "li, p, a, span, h1, h2, h3, h4, h5, h6";
 const font = document.querySelectorAll(fontTags);
 for (let i = 0; i < font.length; i++) {
   font[i].style.fontFamily = "Arial";
-  font[i].style.textTransform = "capitalize";
+}
+// Capitalize links and headings
+const linksAndHeadings = "a, h1, h2, h3, h4, h5, h6";
+const fontLinksAndHeadings = document.querySelectorAll(linksAndHeadings);
+for (let i = 0; i < fontLinksAndHeadings.length; i++) {
+  fontLinksAndHeadings[i].style.textTransform = "capitalize";
+}
+
+// Square bullet points
+const links = document.getElementsByTagName("li");
+for (let i = 0; i < links.length; i++) {
+  links[i].style.listStyleType = "square";
 }
 
 // Content
@@ -20,7 +31,16 @@ const sideNavLinks = document.getElementsByClassName("side-link");
 // hover link
 
 const sideNavLi = document.getElementsByClassName("side-nav-list-item");
+
+
+
 // Responsive optimisation
+// use a case to determine styles
+// run the case when the window size changes
+
+
+
+
 
 if (window.innerWidth > 0) {
   // content layout
@@ -58,7 +78,7 @@ if (window.innerWidth > 0) {
   main[0].style.width = mainWidth + "px";
   // Sections
   for (let i = 0; i < section.length; i++) {
-    section[i].style.padding = "100px 20px";
+    section[i].style.padding = "50px 20px";
   }
 }
 
