@@ -25,36 +25,91 @@ function contentConstructor(name, location, text, bulletPoints, code) {
   this.code = code;
 }
 // navigation items
-let navigationArray = [];
-const jsIntro = new contentConstructor("intro", "#intro");
-const jsAbout = new contentConstructor("about", "#about");
-const jsInclude = new contentConstructor("include", "#include");
-const jsHistory = new contentConstructor("history", "#history");
-const jsOutput = new contentConstructor("output", "#output");
-const jsStatements = new contentConstructor("statements", "#statements");
-const jsSyntax = new contentConstructor("syntax", "#syntax");
-const jsComments = new contentConstructor("comments", "#comments");
-const jsVariables = new contentConstructor("variables", "#variables");
-const jsOperators = new contentConstructor("operators", "#operators");
-const jsDataTypes = new contentConstructor("data types", "#data-types");
-const jsLoops = new contentConstructor("loops", "#loops");
-const jsMaps = new contentConstructor("maps", "#maps");
-const jsFunctions = new contentConstructor("functions", "#functions");
-const jsObjects = new contentConstructor("objects", "#objects");
-const jsArrays = new contentConstructor("arrays", "#arrays");
-const jsEvents = new contentConstructor("events", "#events");
-const jsMath = new contentConstructor("math", "#math");
-const jsErrors = new contentConstructor("errors", "#errors");
-const jsScope = new contentConstructor("scope", "#scope");
-const jsHoisting = new contentConstructor("hoisting", "#hoisting");
-const jsClasses = new contentConstructor("classes", "#classes");
-const jsModules = new contentConstructor("modules", "#modules");
-const jsJson = new contentConstructor("json", "#json");
-const jsStyle = new contentConstructor("style", "#style");
-const jsPerformance = new contentConstructor("performance", "#performance");
+let contentArray = [];
+const jsIntro = new contentConstructor(
+  "intro",
+  "#intro",
+  "This website is built with vanilla Javascript, from a single HTML file containing one element. " +
+    "This site will contain bullet points for each aspect of Javascript. " +
+    "I chose to build this to express my understanding of vanilla Javascript",
+  "",
+  ""
+);
+const jsAbout = new contentConstructor(
+  "about",
+  "#about",
+  "",
+  [
+    "JavaScript is the world's most popular programming language. ",
+    "JavaScript is the programming language of the Web. ",
+    "JavaScript is easy to learn. ",
+    "JavaScript is used to program the behavior of web pages and applications.",
+  ],
+  ""
+);
+const jsInclude = new contentConstructor("include", "#include", "", "", "");
+const jsHistory = new contentConstructor("history", "#history", "", "", "");
+const jsOutput = new contentConstructor("output", "#output", "", "", "");
+const jsStatements = new contentConstructor(
+  "statements",
+  "#statements",
+  "",
+  "",
+  ""
+);
+const jsSyntax = new contentConstructor("syntax", "#syntax", "", "", "");
+const jsComments = new contentConstructor("comments", "#comments", "", "", "");
+const jsVariables = new contentConstructor(
+  "variables",
+  "#variables",
+  "",
+  "",
+  ""
+);
+const jsOperators = new contentConstructor(
+  "operators",
+  "#operators",
+  "",
+  "",
+  ""
+);
+const jsDataTypes = new contentConstructor(
+  "data types",
+  "#data-types",
+  "",
+  "",
+  ""
+);
+const jsLoops = new contentConstructor("loops", "#loops", "", "", "");
+const jsMaps = new contentConstructor("maps", "#maps", "", "", "");
+const jsFunctions = new contentConstructor(
+  "functions",
+  "#functions",
+  "",
+  "",
+  ""
+);
+const jsObjects = new contentConstructor("objects", "#objects", "", "", "");
+const jsArrays = new contentConstructor("arrays", "#arrays", "", "", "");
+const jsEvents = new contentConstructor("events", "#events", "", "", "");
+const jsMath = new contentConstructor("math", "#math", "", "", "");
+const jsErrors = new contentConstructor("errors", "#errors", "", "", "");
+const jsScope = new contentConstructor("scope", "#scope", "", "", "");
+const jsHoisting = new contentConstructor("hoisting", "#hoisting", "", "", "");
+const jsClasses = new contentConstructor("classes", "#classes", "", "", "");
+const jsModules = new contentConstructor("modules", "#modules", "", "", "");
+const jsJson = new contentConstructor("json", "#json", "", "", "");
+const jsStyle = new contentConstructor("style", "#style", "", "", "");
+const jsPerformance = new contentConstructor(
+  "performance",
+  "#performance",
+  "",
+  "",
+  ""
+);
 
 // add menu items to an array so that I can iterate through them
-navigationArray.push(
+contentArray.push(
   jsIntro,
   jsAbout,
   jsHistory,
@@ -84,7 +139,7 @@ navigationArray.push(
 );
 
 // map through the array and a list of anchors
-navigationArray.map((item) => {
+contentArray.map((item) => {
   let sideMenuListItem = document.createElement("li");
   sideMenuListItem.setAttribute("class", "side-nav-list-item");
   sideMenuUl.appendChild(sideMenuListItem);
@@ -105,7 +160,7 @@ website.appendChild(main);
 
 // map through the list creating sections for each topic
 // Create 3 containers for each section to separate the type of content, text, bullet points, code
-navigationArray.map((topic) => {
+contentArray.map((topic) => {
   const topicSection = document.createElement("section");
   topicSection.setAttribute("id", topic.name);
   const topicText = document.createElement("div");
@@ -143,7 +198,6 @@ const aboutBulletPoints = [
   "JavaScript is easy to learn. ",
   "JavaScript is used to program the behavior of web pages and applications.",
 ];
-console.log(aboutBulletPoints.length);
 for (let i = 0; i < aboutBulletPoints.length; i++) {
   const aboutLi = document.createElement("li");
   aboutLi.appendChild(document.createTextNode(aboutBulletPoints[i]));
@@ -257,20 +311,40 @@ for (let i = 0; i < commentsBulletPoints.length; i++) {
 
 // Try to eliminate repetition
 
-for (let i = 0; i < navigationArray.length; i++) {
+for (let i = 0; i < contentArray.length; i++) {
   // create section for every item in array
   const section = document.createElement("section");
+  // create the 3 content containers
   const sectionText = document.createElement("div");
   const sectionBullet = document.createElement("div");
   const sectionCode = document.createElement("div");
+  // assign a class to each div
+  sectionText.setAttribute("class", "content-container");
+  sectionBullet.setAttribute("class", "content-container");
+  sectionCode.setAttribute("class", "content-container");
+  // append the section to the main container
   main.appendChild(section);
+  // append the 3 content contains to the section
   section.appendChild(sectionText);
   section.appendChild(sectionBullet);
   section.appendChild(sectionCode);
+  // create a heading for each section using topic name
   const heading = document.createElement("h2");
-  heading.textContent = navigationArray[i].name;
+  heading.textContent = contentArray[i].name;
   sectionText.appendChild(heading);
-  // create ul const
-  // append section -> ul const
-  // run another for loop
+  const text = document.createElement("p");
+  text.innerText = contentArray[i].text;
+  sectionText.appendChild(text);
+  // Create the bullet point items
+  // create list container
+  const ul = document.createElement("ul");
+  sectionBullet.appendChild(ul);
+  // iterate through bulletpoint array
+  for (let b = 0; b < contentArray[i].bulletPoints.length; i++) {
+    contentArray[i].bulletPoints.forEach((element) => {
+      const li = document.createElement("li");
+      ul.appendChild(li);
+      li.innerText = element;
+    });
+  }
 }
