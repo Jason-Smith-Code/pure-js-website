@@ -1,6 +1,6 @@
 // Colours
 const jsYellow = "#F6F200";
-const darkYellow = "#ADAA02";
+const darkYellow = "#d7ac14";
 const grey = "#151514";
 
 // Font - Assign font family to all font
@@ -14,6 +14,12 @@ const linksAndHeadings = "a, h1, h2, h3, h4, h5, h6";
 const fontLinksAndHeadings = document.querySelectorAll(linksAndHeadings);
 for (let i = 0; i < fontLinksAndHeadings.length; i++) {
   fontLinksAndHeadings[i].style.textTransform = "capitalize";
+}
+// Headings
+const headings = "h1, h2, h3, h4, h5, h6";
+const headingList = document.querySelectorAll(headings);
+for (let i = 0; i < headingList.length; i++) {
+  headingList[i].style.fontSize = "2em";
 }
 
 // Square bullet points
@@ -40,8 +46,8 @@ for (let i = 0; i < contentContainer.length; i++) {
 // bullet point container style
 const bulletContainer = document.getElementsByClassName("bullet-container");
 for (let i = 0; i < bulletContainer.length; i++) {
-  bulletContainer[i].style.backgroundColor = jsYellow;
-  bulletContainer[i].style.color = grey;
+  bulletContainer[i].style.backgroundColor = darkYellow;
+  bulletContainer[i].style.fontSize = "1.2em";
 }
 // code container style
 const codeContainer = document.getElementsByClassName("code-container");

@@ -39,178 +39,256 @@ const jsJavascript = new contentConstructor(
     "Used to program the behavior of web pages and applications.",
     "All javascript files have a '.js' extention",
   ],
-  "// Some code goes here"
-);
-const jsInclude = new contentConstructor(
-  "include",
-  "#include",
-  "",
-  "",
-  "// Some code goes here"
+  ""
 );
 const jsHistory = new contentConstructor(
   "history",
   "#history",
-  "",
-  "",
-  "// Some code goes here"
+  "JavaScript was invented by Brendan Eich in 1995, and became an ECMA standard in 1997. " +
+    "ECMAScript is the official name of the language. " +
+    "ECMAScript versions have been abbreviated to ES1, ES2, ES3, ES5, and ES6. " +
+    "Since 2016 new versions are named by year (ECMAScript 2016 / 2017 / 2018)",
+  [
+    "Version ES1 : ECMAScript 1 (1997)",
+    "Version ES2 : ECMAScript 2 (1998)",
+    "Version ES3 : ECMAScript 3 (1999)",
+    "Version ES4 : ECMAScript 4",
+    "Version ES5 : ECMAScript 5 (2009)",
+    "Version ES6 : ECMAScript 2015",
+    "Version ES6 : ECMAScript 2016",
+    "Version ES6 : ECMAScript 2017",
+    "Version ES6 : ECMAScript 2018",
+  ],
+  ""
+);
+const jsInclude = new contentConstructor(
+  "include",
+  "#include",
+  "There are several ways to include javascript into a website or application",
+  [
+    "Inserted directly into a HTML document using <script> Tags",
+    "External Javascript files can be linked into a HTML document",
+    "External Javascript resources can be linked into a HTML document",
+  ],
+  "// Inserted directly into document" +
+    "\n" +
+    "<script> Javascript goes here </script>" +
+    "\n" +
+    "\n" +
+    "// External file" +
+    "\n" +
+    "<script src='script.js'></script>" +
+    "\n" +
+    "\n" +
+    "// External resource" +
+    "\n" +
+    "<script src='https://www.exteral-location.com/js/script.js'></script>"
 );
 const jsOutput = new contentConstructor(
   "output",
   "#output",
-  "",
-  "",
-  "// Some code goes here"
+  "JavaScript can display data in different ways:",
+  [
+    "Writing into an HTML element, using innerHTML.",
+    "Writing into the HTML output using document.write()",
+    "Writing into an alert box, using window.alert()",
+    "Writing into the browser console, using console.log()",
+  ],
+  "// Using innerHTML" +
+    "\n" +
+    "document.getElementById('hello').innerHTML = 'Hello world';" +
+    "\n\n" +
+    "// Using document.write" +
+    "\n" +
+    "document.write('Hello world');" +
+    "\n\n" +
+    "// Using window.alert" +
+    "\n" +
+    "alert('Hello world');" +
+    "\n\n" +
+    "// Using console.log" +
+    "\n" +
+    "console.log('hello world')"
 );
 const jsStatements = new contentConstructor(
   "statements",
   "#statements",
-  "",
-  "",
-  "// Some code goes here"
+  "A computer program is a list of 'instructions' to be 'executed' by a computer. " +
+    "In a programming language, these programming instructions are called statements. " +
+    " A JavaScript program is a list of programming statements.",
+  [
+    "JavaScript statements are composed of: Values, Operators, Expressions, Keywords, and Comments.",
+    "Semicolons separate JavaScript statements.",
+    "When separated by semicolons, multiple statements on one line are allowed.",
+  ],
+  "// Example statement" + "\n" + "let variableName = 25 + 15;"
 );
 const jsSyntax = new contentConstructor(
   "syntax",
   "#syntax",
   "",
-  "",
+  ["Syntax point 1", "Syntax point 2", "Syntax point 3"],
   "// Some code goes here"
 );
 const jsComments = new contentConstructor(
   "comments",
   "#comments",
   "",
-  "",
+  ["Comment point 1", "Comment point 2", "Comment point 3"],
   "// Some code goes here"
 );
 const jsVariables = new contentConstructor(
   "variables",
   "#variables",
   "",
-  "",
+  ["Variable point 1", "Variable point 2", "Variable point 3"],
   "// Some code goes here"
 );
 const jsOperators = new contentConstructor(
   "operators",
   "#operators",
-  "",
-  "",
-  "// Some code goes here"
+  "There are many types of operators listed below",
+  [
+    "Arithmetic Operators",
+    "Assignment Operators",
+    "String Operators",
+    "Comparison Operators",
+    "Logical Operators",
+    "Type Operators",
+    "Bitwise Operators",
+  ],
+  ""
+);
+const ArithmeticOp = new contentConstructor(
+  "arithmetic operators",
+  "#operators-operators",
+  "There are many types of operators listed below",
+  [
+    "Arithmetic Operators",
+    "Assignment Operators",
+    "String Operators",
+    "Comparison Operators",
+    "Logical Operators",
+    "Type Operators",
+    "Bitwise Operators",
+  ],
+  ""
 );
 const jsDataTypes = new contentConstructor(
   "data types",
   "#data-types",
   "",
-  "",
+  ["Datatype point 1", "Datatype point 2", "Datatype point 3"],
   "// Some code goes here"
 );
 const jsLoops = new contentConstructor(
   "loops",
   "#loops",
   "",
-  "",
+  ["Loop point 1", "Loop point 2", "Loop point 3"],
   "// Some code goes here"
 );
 const jsMaps = new contentConstructor(
   "maps",
   "#maps",
   "",
-  "",
+  ["Map point 1", "Map point 2", "Map point 3"],
   "// Some code goes here"
 );
 const jsFunctions = new contentConstructor(
   "functions",
   "#functions",
   "",
-  "",
+  ["functions point 1", "functions point 2", "functions point 3"],
   "// Some code goes here"
 );
 const jsObjects = new contentConstructor(
   "objects",
   "#objects",
   "",
-  "",
+  ["objects point 1", "objects point 2", "objects point 3"],
   "// Some code goes here"
 );
 const jsArrays = new contentConstructor(
   "arrays",
   "#arrays",
   "",
-  "",
+  ["arrays point 1", "arrays point 2", "arrays point 3"],
   "// Some code goes here"
 );
 const jsEvents = new contentConstructor(
   "events",
   "#events",
   "",
-  "",
+  ["events point 1", "events point 2", "events point 3"],
   "// Some code goes here"
 );
 const jsMath = new contentConstructor(
   "math",
   "#math",
   "",
-  "",
+  ["math point 1", "math point 2", "math point 3"],
   "// Some code goes here"
 );
 const jsErrors = new contentConstructor(
   "errors",
   "#errors",
   "",
-  "",
+  ["errors point 1", "errors point 2", "errors point 3"],
   "// Some code goes here"
 );
 const jsScope = new contentConstructor(
   "scope",
   "#scope",
   "",
-  "",
+  ["scope point 1", "scope point 2", "scope point 3"],
   "// Some code goes here"
 );
 const jsHoisting = new contentConstructor(
   "hoisting",
   "#hoisting",
   "",
-  "",
+  ["hoisting point 1", "hoisting point 2", "hoisting point 3"],
   "// Some code goes here"
 );
 const jsClasses = new contentConstructor(
   "classes",
   "#classes",
   "",
-  "",
+  ["classes point 1", "classes point 2", "classes point 3"],
   "// Some code goes here"
 );
 const jsModules = new contentConstructor(
   "modules",
   "#modules",
   "",
-  "",
+  ["modules point 1", "modules point 2", "modules point 3"],
   "// Some code goes here"
 );
 const jsJson = new contentConstructor(
   "json",
   "#json",
   "",
-  "",
+  ["json point 1", "json point 2", "json point 3"],
   "// Some code goes here"
 );
 const jsStyle = new contentConstructor(
   "style",
   "#style",
   "",
-  "",
+  ["style point 1", "style point 2", "style point 3"],
   "// Some code goes here"
 );
 const jsPerformance = new contentConstructor(
   "performance",
   "#performance",
   "",
-  "",
+  ["Performance point 1", "Performance point 2", "Performance point 3"],
   "// Some code goes here"
 );
 
 // add menu items to an array so that I can iterate through them
+// jsHistory and jsInclude are not appearing
 contentArray.push(
   jsJavascript,
   jsHistory,
@@ -221,6 +299,7 @@ contentArray.push(
   jsComments,
   jsVariables,
   jsOperators,
+  ArithmeticOp,
   jsDataTypes,
   jsLoops,
   jsMaps,
@@ -260,6 +339,7 @@ const main = document.createElement("main");
 website.appendChild(main);
 
 for (let i = 0; i < contentArray.length; i++) {
+  console.log(contentArray[i].name);
   // create section for every item in array
   const section = document.createElement("section");
   // create the 3 content containers
@@ -294,11 +374,9 @@ for (let i = 0; i < contentArray.length; i++) {
   const ul = document.createElement("ul");
   bulletContainer.appendChild(ul);
   // iterate through bulletpoint array
-  for (let b = 0; b < contentArray[i].bulletPoints.length; i++) {
-    contentArray[i].bulletPoints.forEach((element) => {
-      const li = document.createElement("li");
-      ul.appendChild(li);
-      li.innerText = element;
-    });
-  }
+  contentArray[i].bulletPoints.forEach((element) => {
+    const li = document.createElement("li");
+    ul.appendChild(li);
+    li.innerText = element;
+  });
 }
