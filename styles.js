@@ -2,6 +2,7 @@
 const jsYellow = "#F6F200";
 const darkYellow = "#d7ac14";
 const grey = "#151514";
+let headerWidth = 240;
 
 // Font - Assign font family to all font
 const fontTags = "li, p, a, span, h1, h2, h3, h4, h5, h6";
@@ -67,7 +68,8 @@ if (window.innerWidth > 0) {
 
   // header
   headerElement[0].style.backgroundColor = "black";
-  headerElement[0].style.width = "200px";
+  headerElement[0].style.width = headerWidth + "px";
+  headerElement[0].style.position = "fixed";
 
   // Side Navigation List items
   for (let i = 0; i < sideNavLi.length; i++) {
@@ -90,10 +92,14 @@ if (window.innerWidth > 0) {
   }
   sideNavUl.style.listStyle = "none";
   sideNavUl.style.padding = "0";
+  sideNavUl.style.overflowY = "scroll";
+  sideNavUl.style.height = "calc(100vh - 130px)";
+
   // Main
   const main = document.getElementsByTagName("main");
-  const mainWidth = window.innerWidth - 200;
+  const mainWidth = window.innerWidth - headerWidth;
   main[0].style.width = mainWidth + "px";
+  main[0].style.paddingLeft = headerWidth + "px";
   // Sections
 }
 

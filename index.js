@@ -38,6 +38,8 @@ const jsJavascript = new contentConstructor(
   [
     "World's most popular programming language. ",
     "The programming language of the Web. ",
+    "Light weight. ",
+    "Interpreted. ",
     "Easy to learn. ",
     "Used to program the behavior of web pages and applications.",
     "All javascript files have a '.js' extention",
@@ -296,9 +298,23 @@ const typeOp = new contentConstructor(
   "The data type operators are listed below",
   [
     "typeof : Returns the type of a variable",
-    "instanceof : Returns true if an object is an instance of an object type",
+    "instanceof : The instanceof operator tests to see if the prototype property of a constructor appears anywhere in the prototype chain of an object. The return value is a boolean value.",
   ],
-  "// Some code goes here"
+  "// typeof \n" +
+    "const word = 'some word' \n" +
+    "console.log(typeof word) \n" +
+    "returns 'string' \n \n" +
+    "// instanceof \n" +
+    "function Car(make, model, year) { \n" +
+    `${tab}this.make = make; \n` +
+    `${tab}this.model = model; \n` +
+    `${tab}this.year = year; \n` +
+    "} \n" +
+    "const auto = new Car('Honda', 'Accord', 1998); \n \n" +
+    "console.log(auto instanceof Car); \n" +
+    "// expected output: true \n\n" +
+    "console.log(auto instanceof Object); \n" +
+    "// expected output: true \n"
 );
 const jsDataTypes = new contentConstructor(
   "data types",
@@ -306,34 +322,63 @@ const jsDataTypes = new contentConstructor(
   "data-types",
   "Javascript variables can hold diffent types of data listed below.",
   ["Number", "String", "Boolean", "Array", "Object", "Undefined", "Null"],
-  ""
+  "// Data types \n" +
+    "const numberType = 1 \n" +
+    "const stringType = 'String' \n" +
+    "const booleanType = true \n" +
+    "const arrayType = [] \n" +
+    "const objectType = {} \n"
 );
 const jsFunctions = new contentConstructor(
   "functions",
   "#functions",
   "functions",
   "A JavaScript function is a block of code designed to perform a particular task. " +
+    "Functions are one of the fundamental building blocks in JavaScript. " +
+    "A function in JavaScript is similar to a procedure—a set of statements that performs a task or calculates a value, " +
+    "but for a procedure to qualify as a function, " +
+    " it should take some input and return an output where there is some obvious relationship between the input and the output." +
+    " To use a function, you must define it somewhere in the scope from which you wish to call it." +
     "Functions execute when they are invoked. There are several ways to write functions, and several types of functions. ",
   [
     "When a function reaches a return statement it will stop executing",
     "Can contain parameters",
     "Variables declared within a JavaScript function, become local to the function.",
   ],
-  "// Some code goes here"
+  "// Function declaration \n" +
+    "function square(number) { \n" +
+    ` ${tab}return number * number; \n` +
+    "} \n \n" +
+    "// Function expression \n" +
+    "const square = function(number) { return number * number } \n" +
+    "var x = square(4) // x gets the value 16"
 );
 const jsLoops = new contentConstructor(
   "loops",
   "#loops",
   "loops",
-  "Loops allow us to iterate through",
-  ["Loop point 1", "Loop point 2", "Loop point 3"],
+  "There are many different kinds of loops, but they all essentially do the same thing: they repeat an action some number of times. " +
+    "(Note that it's possible that number could be zero!)" +
+    "The various loop mechanisms offer different ways to determine the start and end points of the loop. " +
+    "There are various situations that are more easily served by one type of loop over the others. " +
+    "The statements for loops provided in JavaScript are:",
+  [
+    "for statement",
+    "do...while statement",
+    "while statement",
+    "labeled statement",
+    "break statement",
+    "continue statement",
+    "for...in statement",
+    "for...of statement",
+  ],
   "// Some code goes here"
 );
 const jsMaps = new contentConstructor(
   "maps",
   "#maps",
   "maps",
-  "",
+  "he Map object holds key-value pairs and remembers the original insertion order of the keys. Any value (both objects and primitive values) may be used as either a key or a value.",
   ["Map point 1", "Map point 2", "Map point 3"],
   "// Some code goes here"
 );
@@ -349,73 +394,196 @@ const jsArrays = new contentConstructor(
   "arrays",
   "#arrays",
   "arrays",
-  "",
-  ["arrays point 1", "arrays point 2", "arrays point 3"],
-  "// Some code goes here"
+  "An array is a special variable, which can hold more than one value:",
+  [
+    "Arrays store any data types",
+    "Arrays can be sorted",
+    "Elements in an array can be added or removed",
+  ],
+  "// Array example \n" + "const cars = ['Saab', 'Volvo', 'BMW'];"
 );
 const jsEvents = new contentConstructor(
   "events",
   "#events",
   "events",
-  "",
-  ["events point 1", "events point 2", "events point 3"],
+  "HTML events are things that happen to HTML elements. There are many events that can occur, here is a small list of some of the popular ones:",
+  [
+    "onchange : An HTML element has been changed",
+    "onclick : The user clicks an HTML element",
+    "onmouseover : The user moves the mouse over an HTML element",
+    "onmouseout : The user moves the mouse away from an HTML element",
+    "onkeydown : The user pushes a keyboard key",
+    "onLoad : The browser has finished loading the page",
+    "onsubmit : A form is submitted",
+    "onchange : Occurs when the value of an element has been changed",
+  ],
   "// Some code goes here"
 );
 const jsMath = new contentConstructor(
   "math",
   "#math",
   "math",
-  "",
-  ["math point 1", "math point 2", "math point 3"],
-  "// Some code goes here"
+  "The JavaScript Math object allows you to perform mathematical tasks on numbers.",
+  [
+    "Unlike other objects, the Math object has no constructor.",
+    "The Math object is static.",
+    "All methods and properties can be used without creating a Math object first.",
+  ],
+  "Math.abs(x) // \n" +
+    "Math.acos(x) //  \n" +
+    "Math.acosh(x) // \n" +
+    "Math.asin(x) // \n" +
+    "Math.asinh(x) // \n" +
+    "Math.atan(x) // \n" +
+    "Math.atan2(y, x) // \n" +
+    "Math.atanh(x) // \n" +
+    "Math.ceil(x) // \n" +
+    "Math.clz32(x) //  \n" +
+    "Math.cos(x) // \n" +
+    "Math.E //\n" +
+    "Math.exp(x) // \n" +
+    "Math.expm1(x) // \n" +
+    "Math.floor(x) // \n" +
+    "Math.fround(x) // \n" +
+    "Math.LN2 // \n" +
+    "Math.LN10 // \n" +
+    "Math.log(x) // \n" +
+    "Math.log10(x) // \n" +
+    "Math.LOG10E // \n" +
+    "Math.log1p(x) // \n" +
+    "Math.log2(x) // \n" +
+    "Math.LOG2E // \n" +
+    "Math.max(x1,x2,..) // \n" +
+    "Math.min(x1,x2,..) // \n" +
+    "Math.PI // \n" +
+    "Math.pow(x, y) // \n" +
+    "Math.random() // \n" +
+    "Math.round(x) // \n" +
+    "Math.sign(x) // \n" +
+    "Math.sin(x) // \n" +
+    "Math.sinh(x) // \n" +
+    "Math.sqrt(x) // \n" +
+    "Math.SQRT1_2 // \n" +
+    "Math.SQRT2 // \n" +
+    "Math.tan(x) // \n" +
+    "Math.tanh(x) // \n" +
+    "Math.trunc(x) // \n"
 );
 const jsErrors = new contentConstructor(
   "errors",
   "#errors",
-  "errors",
+  "Error objects are thrown when runtime errors occur. The Error object can also be used as a base object for user-defined exceptions. See below for standard built-in error types.",
   "",
-  ["errors point 1", "errors point 2", "errors point 3"],
-  "// Some code goes here"
+  [
+    "EvalError : Creates an instance representing an error that occurs regarding the global function eval()",
+    "RangeError : Creates an instance representing an error that occurs when a numeric variable or parameter is outside its valid range.",
+    "ReferenceError : Creates an instance representing an error that occurs when de-referencing an invalid reference.",
+    "SyntaxError : Creates an instance representing a syntax error.",
+    "TypeError : Creates an instance representing an error that occurs when a variable or parameter is not of a valid type.",
+    "URIError : Creates an instance representing an error that occurs when encodeURI() or decodeURI() are passed invalid parameters.",
+    "AggregateError : Creates an instance representing several errors wrapped in a single error when multiple errors need to be reported by an operation, for example by Promise.any().",
+    "InternalError : Creates an instance representing an error that occurs when an internal error in the JavaScript engine is thrown. E.g. 'too much recursion'.",
+  ],
+  ""
 );
 const jsScope = new contentConstructor(
   "scope",
   "#scope",
   "scope",
-  "",
-  ["scope point 1", "scope point 2", "scope point 3"],
-  "// Some code goes here"
+  "Scope determines the accessibility (visibility) of variables.",
+  ["Block scope", "local scope", "Global scope"],
+  "// Block scope \n \n" +
+    "{ \n" +
+    `${tab}let x = 2; \n` +
+    "} \n" +
+    "// x can NOT be used here \n \n" +
+    "// Local scope \n \n" +
+    "// code here can NOT use carName \n" +
+    "function myFunction() { \n" +
+    `${tab}let carName = "Volvo"; \n` +
+    "// code here CAN use carName \n" +
+    "} \n" +
+    "// code here can NOT use carName \n \n" +
+    "// Global scope \n" +
+    'let carName = "Volvo"; \n' +
+    "// code here can use carName \n" +
+    "function myFunction() { \n" +
+    `${tab}// code here can also use carName \n` +
+    "}"
 );
 const jsHoisting = new contentConstructor(
   "hoisting",
   "#hoisting",
   "hoisting",
-  "",
-  ["hoisting point 1", "hoisting point 2", "hoisting point 3"],
-  "// Some code goes here"
+  "Hoisting is JavaScript's default behavior of moving declarations to the top." +
+    "In JavaScript, a variable can be declared after it has been used. " +
+    "In other words; a variable can be used before it has been declared.",
+  [
+    "Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope",
+    "Variables defined with let and const are hoisted to the top of the block, but not initialized.",
+    "Using a let variable before it is declared will result in a ReferenceError.",
+    "JavaScript only hoists declarations, not initializations.",
+  ],
+  ""
 );
 const jsClasses = new contentConstructor(
   "classes",
   "#classes",
   "classes",
-  "",
+  "ECMAScript 2015, also known as ES6, introduced JavaScript Classes. " +
+    "JavaScript Classes are templates for JavaScript Objects.",
   ["classes point 1", "classes point 2", "classes point 3"],
-  "// Some code goes here"
+  "class ClassName { \n" +
+    `${tab}constructor() { ... } \n` +
+    "} \n \n" +
+    "class Car { \n" +
+    `${tab}constructor(name, year) { \n` +
+    `${tab}${tab}this.name = name; \n` +
+    `${tab}${tab}this.year = year; \n` +
+    "} \n \n" +
+    "let myCar1 = new Car('Ford', 2014);"
 );
 const jsModules = new contentConstructor(
   "modules",
   "#modules",
   "modules",
-  "",
-  ["modules point 1", "modules point 2", "modules point 3"],
-  "// Some code goes here"
+  "JavaScript modules allow you to break up your code into separate files making it easier to maintain the code-base.",
+  [
+    "JavaScript modules allow you to break up your code into separate files.",
+    "JavaScript modules rely on the import and export statements.",
+    "You can export a function or variable from any file",
+    "You can create named exports two ways. In-line individually, or all at once at the bottom.",
+    "You can only have one default export in a file.",
+    "Named exports are constructed using curly braces. Default exports are not.",
+  ],
+  "// Named export \n" +
+    "export const name = 'Jesse'; \n" +
+    "export const age = 40; \n \n" +
+    "const name = 'Jesse'; \n" +
+    "const age = 40; \n" +
+    "export {name, age}; \n \n" +
+    "// Named import \n" +
+    'import { name, age } from "./person.js";'
 );
 const jsJson = new contentConstructor(
   "json",
   "#json",
   "json",
-  "",
-  ["json point 1", "json point 2", "json point 3"],
-  "// Some code goes here"
+  "JSON is a format for storing and transporting data.",
+  [
+    "JSON stands for JavaScript Object Notation",
+    "JSON is a lightweight data interchange format",
+    "JSON is language independent",
+    "JSON is self-describing and easy to understand",
+    "The JSON format is syntactically identical to the code for creating JavaScript objects.",
+  ],
+  "{ \n" +
+    `${tab}"employees":[ \n` +
+    `${tab}${tab}{"firstName":"John", "lastName":"Doe"}, \n` +
+    `${tab}${tab}{"firstName":"Anna", "lastName":"Smith"}, \n` +
+    `${tab}${tab}{"firstName":"Peter", "lastName":"Jones"} \n` +
+    `${tab}]\n` +
+    "}"
 );
 const jsStyle = new contentConstructor(
   "style",
@@ -432,6 +600,43 @@ const jsPerformance = new contentConstructor(
   "",
   ["Performance point 1", "Performance point 2", "Performance point 3"],
   "// Some code goes here"
+);
+const strictMode = new contentConstructor(
+  "strict mode",
+  "#strict-mode",
+  "strict-mode",
+  "JavaScript's strict mode, introduced in ECMAScript 5," +
+    "is a way to opt in to a restricted variant of JavaScript, " +
+    "thereby implicitly opting-out of 'sloppy mode'. " +
+    "Strict mode isn't just a subset: it intentionally has different semantics from normal code. " +
+    "Browsers not supporting strict mode will run strict mode code with different behavior from browsers that do, " +
+    "so don't rely on strict mode without feature-testing for support for the relevant aspects of strict mode. " +
+    "Strict mode code and non-strict mode code can coexist, so scripts can opt into strict mode incrementally. " +
+    "Strict mode makes several changes to normal JavaScript semantics:",
+  [
+    "Eliminates some JavaScript silent errors by changing them to throw errors.",
+    "Fixes mistakes that make it difficult for JavaScript engines to perform optimizations: strict mode code can sometimes be made to run faster than identical code that's not strict mode.",
+    "Prohibits some syntax likely to be defined in future versions of ECMAScript.",
+  ],
+  "// Whole-script strict mode syntax \n" +
+    "'use strict'; \n" +
+    "var v = 'Hi! I'm a strict mode script!';"
+);
+const jsFrameworks = new contentConstructor(
+  "frameworks",
+  "#frameworks",
+  "frameworks",
+  "JavaScript frameworks are an essential part of modern front-end web development, " +
+    "providing developers with tried and tested tools for building scalable, " +
+    "interactive web applications. Many modern companies use frameworks as a standard part of their tooling, " +
+    "so many front-end development jobs now require framework experience. ",
+  [
+    "Why should I use a framework? What problems do they solve for me?",
+    "What questions should I ask when trying to choose a framework? Do I even need to use a framework?",
+    "What features do frameworks have? How do they work in general, and how do frameworks' implementations of these features differ?",
+    "How do they relate to 'vanilla' JavaScript or HTML?",
+  ],
+  ""
 );
 
 // add menu items to an array so that I can iterate through them
@@ -468,7 +673,9 @@ contentArray.push(
   jsModules,
   jsJson,
   jsStyle,
-  jsPerformance
+  jsPerformance,
+  strictMode,
+  jsFrameworks
 );
 
 // map through the contentArray to create a list of anchors for the side menu navigation
