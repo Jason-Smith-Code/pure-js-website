@@ -17,9 +17,10 @@ const sideMenuUl = document.createElement("ul");
 sideMenuUl.setAttribute("id", "side-ul");
 desktopNav.appendChild(sideMenuUl);
 // Navgation items object constructor
-function contentConstructor(name, location, text, bulletPoints, code) {
+function contentConstructor(name, location, anchor, text, bulletPoints, code) {
   this.name = name;
   this.location = location;
+  this.anchor = anchor;
   this.text = text;
   this.bulletPoints = bulletPoints;
   this.code = code;
@@ -30,6 +31,7 @@ let contentArray = [];
 const jsJavascript = new contentConstructor(
   "javascript",
   "#javascript",
+  "javascript",
   "This website is built with vanilla Javascript, from a single HTML file containing one element. " +
     "This site will contain bullet points for each aspect of Javascript. " +
     "I chose to build this to express my understanding of vanilla Javascript",
@@ -45,6 +47,7 @@ const jsJavascript = new contentConstructor(
 const jsHistory = new contentConstructor(
   "history",
   "#history",
+  "history",
   "JavaScript was invented by Brendan Eich in 1995, and became an ECMA standard in 1997. " +
     "ECMAScript is the official name of the language. " +
     "ECMAScript versions have been abbreviated to ES1, ES2, ES3, ES5, and ES6. " +
@@ -65,6 +68,7 @@ const jsHistory = new contentConstructor(
 const jsInclude = new contentConstructor(
   "include",
   "#include",
+  "include",
   "There are several ways to include javascript into a website or application",
   [
     "Inserted directly into a HTML document using <script> Tags",
@@ -81,6 +85,7 @@ const jsInclude = new contentConstructor(
 const jsOutput = new contentConstructor(
   "output",
   "#output",
+  "output",
   "JavaScript can display data in different ways:",
   [
     "Writing into an HTML element, using innerHTML.",
@@ -100,6 +105,7 @@ const jsOutput = new contentConstructor(
 const jsStatements = new contentConstructor(
   "statements",
   "#statements",
+  "statements",
   "A computer program is a list of 'instructions' to be 'executed' by a computer. " +
     "In a programming language, these programming instructions are called statements. " +
     " A JavaScript program is a list of programming statements.",
@@ -113,6 +119,7 @@ const jsStatements = new contentConstructor(
 const jsSyntax = new contentConstructor(
   "syntax",
   "#syntax",
+  "syntax",
   "JavaScript syntax is the set of rules, how JavaScript programs are constructed.",
   [
     "The JavaScript syntax defines two types of values: Fixed and Variable",
@@ -126,6 +133,7 @@ const jsSyntax = new contentConstructor(
 const jsComments = new contentConstructor(
   "comments",
   "#comments",
+  "comments",
   "It's great to use comments for planning, explaining and preventing the execution of code. " +
     "They can help when more than one person is working on a script, " +
     "or if you find yourself revisting old code it may help to read comments first to get a quick understanding. ",
@@ -149,6 +157,7 @@ const jsComments = new contentConstructor(
 const jsVariables = new contentConstructor(
   "variables",
   "#variables",
+  "variables",
   "In a programming language, variables are used to store data values. " +
     "JavaScript uses the keywords var, let and const to declare variables. " +
     "An equal sign is used to assign values to variables.",
@@ -164,6 +173,7 @@ const jsVariables = new contentConstructor(
 const jsLet = new contentConstructor(
   "let",
   "#let",
+  "let",
   "The let keyword was introduced in ES6 (2015).",
   [
     "Cannot be redeclared.",
@@ -185,6 +195,7 @@ const jsLet = new contentConstructor(
 const jsConst = new contentConstructor(
   "const",
   "#const",
+  "const",
   "The const keyword was introduced in ES6 (2015).",
   [
     "Cannot be redeclared.",
@@ -208,6 +219,7 @@ const jsConst = new contentConstructor(
 const jsOperators = new contentConstructor(
   "operators",
   "#operators",
+  "operators",
   "There are many types of operators listed below",
   [
     "Arithmetic Operators",
@@ -222,6 +234,7 @@ const jsOperators = new contentConstructor(
 const ArithmeticOp = new contentConstructor(
   "arithmetic operators",
   "#arithmetic-operators",
+  "arithmetic-operators",
   "The arithmetic operators are listed below",
   [
     "+ : Addition",
@@ -238,6 +251,7 @@ const ArithmeticOp = new contentConstructor(
 const assignmentOp = new contentConstructor(
   "assignment operators",
   "#assignment-operators",
+  "assignment-operators",
   "The assignment operators are listed below",
   [
     "= : assigns a value to a variable.",
@@ -252,6 +266,7 @@ const assignmentOp = new contentConstructor(
 const comparisonOp = new contentConstructor(
   "comparison operators",
   "#comparison-operators",
+  "comparison-operators",
   "The comparison operators are listed below",
   [
     "== : equal to.",
@@ -269,6 +284,7 @@ const comparisonOp = new contentConstructor(
 const logicalOp = new contentConstructor(
   "logical operators",
   "#logical-operators",
+  "logical-operators",
   "The logical operators are listed below, they return a boolean.",
   ["&& : logical and", "|| : logical or", "! : logical not"],
   ""
@@ -276,6 +292,7 @@ const logicalOp = new contentConstructor(
 const typeOp = new contentConstructor(
   "type operator",
   "#type-operator",
+  "type-operator",
   "The data type operators are listed below",
   [
     "typeof : Returns the type of a variable",
@@ -286,6 +303,7 @@ const typeOp = new contentConstructor(
 const jsDataTypes = new contentConstructor(
   "data types",
   "#data-types",
+  "data-types",
   "Javascript variables can hold diffent types of data listed below.",
   ["Number", "String", "Boolean", "Array", "Object", "Undefined", "Null"],
   ""
@@ -293,6 +311,7 @@ const jsDataTypes = new contentConstructor(
 const jsFunctions = new contentConstructor(
   "functions",
   "#functions",
+  "functions",
   "A JavaScript function is a block of code designed to perform a particular task. " +
     "Functions execute when they are invoked. There are several ways to write functions, and several types of functions. ",
   [
@@ -305,6 +324,7 @@ const jsFunctions = new contentConstructor(
 const jsLoops = new contentConstructor(
   "loops",
   "#loops",
+  "loops",
   "Loops allow us to iterate through",
   ["Loop point 1", "Loop point 2", "Loop point 3"],
   "// Some code goes here"
@@ -312,6 +332,7 @@ const jsLoops = new contentConstructor(
 const jsMaps = new contentConstructor(
   "maps",
   "#maps",
+  "maps",
   "",
   ["Map point 1", "Map point 2", "Map point 3"],
   "// Some code goes here"
@@ -319,6 +340,7 @@ const jsMaps = new contentConstructor(
 const jsObjects = new contentConstructor(
   "objects",
   "#objects",
+  "objects",
   "",
   ["objects point 1", "objects point 2", "objects point 3"],
   "// Some code goes here"
@@ -326,6 +348,7 @@ const jsObjects = new contentConstructor(
 const jsArrays = new contentConstructor(
   "arrays",
   "#arrays",
+  "arrays",
   "",
   ["arrays point 1", "arrays point 2", "arrays point 3"],
   "// Some code goes here"
@@ -333,6 +356,7 @@ const jsArrays = new contentConstructor(
 const jsEvents = new contentConstructor(
   "events",
   "#events",
+  "events",
   "",
   ["events point 1", "events point 2", "events point 3"],
   "// Some code goes here"
@@ -340,6 +364,7 @@ const jsEvents = new contentConstructor(
 const jsMath = new contentConstructor(
   "math",
   "#math",
+  "math",
   "",
   ["math point 1", "math point 2", "math point 3"],
   "// Some code goes here"
@@ -347,6 +372,7 @@ const jsMath = new contentConstructor(
 const jsErrors = new contentConstructor(
   "errors",
   "#errors",
+  "errors",
   "",
   ["errors point 1", "errors point 2", "errors point 3"],
   "// Some code goes here"
@@ -354,6 +380,7 @@ const jsErrors = new contentConstructor(
 const jsScope = new contentConstructor(
   "scope",
   "#scope",
+  "scope",
   "",
   ["scope point 1", "scope point 2", "scope point 3"],
   "// Some code goes here"
@@ -361,6 +388,7 @@ const jsScope = new contentConstructor(
 const jsHoisting = new contentConstructor(
   "hoisting",
   "#hoisting",
+  "hoisting",
   "",
   ["hoisting point 1", "hoisting point 2", "hoisting point 3"],
   "// Some code goes here"
@@ -368,6 +396,7 @@ const jsHoisting = new contentConstructor(
 const jsClasses = new contentConstructor(
   "classes",
   "#classes",
+  "classes",
   "",
   ["classes point 1", "classes point 2", "classes point 3"],
   "// Some code goes here"
@@ -375,6 +404,7 @@ const jsClasses = new contentConstructor(
 const jsModules = new contentConstructor(
   "modules",
   "#modules",
+  "modules",
   "",
   ["modules point 1", "modules point 2", "modules point 3"],
   "// Some code goes here"
@@ -382,6 +412,7 @@ const jsModules = new contentConstructor(
 const jsJson = new contentConstructor(
   "json",
   "#json",
+  "json",
   "",
   ["json point 1", "json point 2", "json point 3"],
   "// Some code goes here"
@@ -389,6 +420,7 @@ const jsJson = new contentConstructor(
 const jsStyle = new contentConstructor(
   "style",
   "#style",
+  "style",
   "",
   ["style point 1", "style point 2", "style point 3"],
   "// Some code goes here"
@@ -396,6 +428,7 @@ const jsStyle = new contentConstructor(
 const jsPerformance = new contentConstructor(
   "performance",
   "#performance",
+  "performance",
   "",
   ["Performance point 1", "Performance point 2", "Performance point 3"],
   "// Some code goes here"
@@ -459,9 +492,9 @@ const main = document.createElement("main");
 website.appendChild(main);
 
 for (let i = 0; i < contentArray.length; i++) {
-  console.log(contentArray[i].name);
   // create section for every item in array
   const section = document.createElement("section");
+  section.setAttribute("id", contentArray[i].anchor);
   // create the 3 content containers
   const textContainer = document.createElement("div");
   const bulletContainer = document.createElement("div");
