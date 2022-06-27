@@ -24,7 +24,8 @@ function contentConstructor(name, location, text, bulletPoints, code) {
   this.bulletPoints = bulletPoints;
   this.code = code;
 }
-// navigation items
+// Content
+const tab = "\u2003";
 let contentArray = [];
 const jsJavascript = new contentConstructor(
   "javascript",
@@ -70,18 +71,11 @@ const jsInclude = new contentConstructor(
     "External Javascript files can be linked into a HTML document",
     "External Javascript resources can be linked into a HTML document",
   ],
-  "// Inserted directly into document" +
-    "\n" +
-    "<script> Javascript goes here </script>" +
-    "\n" +
-    "\n" +
-    "// External file" +
-    "\n" +
-    "<script src='script.js'></script>" +
-    "\n" +
-    "\n" +
-    "// External resource" +
-    "\n" +
+  "// Inserted directly into document  \n" +
+    "<script> Javascript goes here </script> \n \n" +
+    "// External file \n" +
+    "<script src='script.js'></script> \n \n" +
+    "// External resource \n" +
     "<script src='https://www.exteral-location.com/js/script.js'></script>"
 );
 const jsOutput = new contentConstructor(
@@ -94,20 +88,13 @@ const jsOutput = new contentConstructor(
     "Writing into an alert box, using window.alert()",
     "Writing into the browser console, using console.log()",
   ],
-  "// Using innerHTML" +
-    "\n" +
-    "document.getElementById('hello').innerHTML = 'Hello world';" +
-    "\n\n" +
-    "// Using document.write" +
-    "\n" +
-    "document.write('Hello world');" +
-    "\n\n" +
-    "// Using window.alert" +
-    "\n" +
-    "alert('Hello world');" +
-    "\n\n" +
-    "// Using console.log" +
-    "\n" +
+  "// Using innerHTML \n" +
+    "document.getElementById('hello').innerHTML = 'Hello world'; \n \n" +
+    "// Using document.write \n" +
+    "document.write('Hello world'); \n \n" +
+    "// Using window.alert \n" +
+    "alert('Hello world'); \n \n" +
+    "// Using console.log \n" +
     "console.log('hello world')"
 );
 const jsStatements = new contentConstructor(
@@ -126,23 +113,97 @@ const jsStatements = new contentConstructor(
 const jsSyntax = new contentConstructor(
   "syntax",
   "#syntax",
-  "",
-  ["Syntax point 1", "Syntax point 2", "Syntax point 3"],
-  "// Some code goes here"
+  "JavaScript syntax is the set of rules, how JavaScript programs are constructed.",
+  [
+    "The JavaScript syntax defines two types of values: Fixed and Variable",
+    "Fixed values are called Literals.",
+    "Variable values are called Variables.",
+    "Numbers are written with or without decimals",
+    "Strings are text, written within double or single quotes",
+  ],
+  "'single quote string'" + "\n \n" + '"double quote string"'
 );
 const jsComments = new contentConstructor(
   "comments",
   "#comments",
-  "",
-  ["Comment point 1", "Comment point 2", "Comment point 3"],
-  "// Some code goes here"
+  "It's great to use comments for planning, explaining and preventing the execution of code. " +
+    "They can help when more than one person is working on a script, " +
+    "or if you find yourself revisting old code it may help to read comments first to get a quick understanding. ",
+  [
+    "Comments can be used to explain JavaScript code, and to make it more readable.",
+    "Comments can also be used to prevent execution, when testing alternative code.",
+    "Comments can be used to plan out complex tasks into smaller steps.",
+  ],
+  "// This is a single line comment" +
+    "\n \n" +
+    "/*" +
+    "\n" +
+    `${tab} This is ` +
+    "\n" +
+    `${tab} a multi-line` +
+    "\n" +
+    `${tab} comment` +
+    "\n" +
+    "*/"
 );
 const jsVariables = new contentConstructor(
   "variables",
   "#variables",
-  "",
-  ["Variable point 1", "Variable point 2", "Variable point 3"],
-  "// Some code goes here"
+  "In a programming language, variables are used to store data values. " +
+    "JavaScript uses the keywords var, let and const to declare variables. " +
+    "An equal sign is used to assign values to variables.",
+  [
+    "Variables are containers for storing data (storing data values).",
+    "Use const to declare a variable which won't change",
+    "Use let to declare a variable which is expected to change",
+    "Use var to declare variables if the javascript version is 1995 to 2015",
+    "All variables must be identified with a unique name",
+  ],
+  "// Declaring variables \n" + "let x; \n" + "const y; \n" + "var z; \n"
+);
+const jsLet = new contentConstructor(
+  "let",
+  "#let",
+  "The let keyword was introduced in ES6 (2015).",
+  [
+    "Cannot be redeclared.",
+    "Must be declared before use.",
+    "Have block scope.",
+  ],
+  "// Cannot be redeclared \n" +
+    "let x = 5; \n" +
+    "let x = 0; \n" +
+    "SyntaxError: 'x' has already been declared \n \n" +
+    "// Must be declared before use. \n" +
+    "let x; \n" +
+    "x can be used now \n \n" +
+    "// Have block scope. \n" +
+    "{ \n" +
+    `${tab} let x = 2; \n` +
+    "} \n"
+);
+const jsConst = new contentConstructor(
+  "const",
+  "#const",
+  "The const keyword was introduced in ES6 (2015).",
+  [
+    "Cannot be redeclared.",
+    "Must be declared before use.",
+    "Have block scope.",
+    "always declare a variable with const unless you know that the value will change.",
+    "Use const when you declare: a new Array, a new Object, a new Function, a new RegExp",
+  ],
+  "// Cannot be redeclared \n" +
+    "const x = 5; \n" +
+    "const x = 0; \n" +
+    "SyntaxError: 'x' has already been declared \n \n" +
+    "// Must be declared before use. \n" +
+    "const x; \n" +
+    "x can be used now \n \n" +
+    "// Have block scope. \n" +
+    "{ \n" +
+    `${tab} const x = 2; \n` +
+    "} \n"
 );
 const jsOperators = new contentConstructor(
   "operators",
@@ -151,7 +212,6 @@ const jsOperators = new contentConstructor(
   [
     "Arithmetic Operators",
     "Assignment Operators",
-    "String Operators",
     "Comparison Operators",
     "Logical Operators",
     "Type Operators",
@@ -161,30 +221,91 @@ const jsOperators = new contentConstructor(
 );
 const ArithmeticOp = new contentConstructor(
   "arithmetic operators",
-  "#operators-operators",
-  "There are many types of operators listed below",
+  "#arithmetic-operators",
+  "The arithmetic operators are listed below",
   [
-    "Arithmetic Operators",
-    "Assignment Operators",
-    "String Operators",
-    "Comparison Operators",
-    "Logical Operators",
-    "Type Operators",
-    "Bitwise Operators",
+    "+ : Addition",
+    "- : Subtract",
+    "* : Multiplication",
+    "** : Exponentiation (ES2016)",
+    "/ : Division",
+    "% : Modulus (Remainder)",
+    "++ : Increment",
+    "-- : Decrement",
   ],
   ""
+);
+const assignmentOp = new contentConstructor(
+  "assignment operators",
+  "#assignment-operators",
+  "The assignment operators are listed below",
+  [
+    "= : assigns a value to a variable.",
+    "+= : adds a value to a variable",
+    "-= : subtracts a value from a variable",
+    "*= : multiplies a variable",
+    "/= : divides a variable",
+    "%= : assigns a remainder to a variable",
+  ],
+  ""
+);
+const comparisonOp = new contentConstructor(
+  "comparison operators",
+  "#comparison-operators",
+  "The comparison operators are listed below",
+  [
+    "== : equal to.",
+    "=== : equal value and equal type",
+    "!= : not equal",
+    "!== : not equal value or not equal type",
+    "> : greater than",
+    "< : less than",
+    ">= : greater than or equal to",
+    "<= : less than or equal to",
+    "? : ternary operator",
+  ],
+  ""
+);
+const logicalOp = new contentConstructor(
+  "logical operators",
+  "#logical-operators",
+  "The logical operators are listed below, they return a boolean.",
+  ["&& : logical and", "|| : logical or", "! : logical not"],
+  ""
+);
+const typeOp = new contentConstructor(
+  "type operator",
+  "#type-operator",
+  "The data type operators are listed below",
+  [
+    "typeof : Returns the type of a variable",
+    "instanceof : Returns true if an object is an instance of an object type",
+  ],
+  "// Some code goes here"
 );
 const jsDataTypes = new contentConstructor(
   "data types",
   "#data-types",
-  "",
-  ["Datatype point 1", "Datatype point 2", "Datatype point 3"],
+  "Javascript variables can hold diffent types of data listed below.",
+  ["Number", "String", "Boolean", "Array", "Object", "Undefined", "Null"],
+  ""
+);
+const jsFunctions = new contentConstructor(
+  "functions",
+  "#functions",
+  "A JavaScript function is a block of code designed to perform a particular task. " +
+    "Functions execute when they are invoked. There are several ways to write functions, and several types of functions. ",
+  [
+    "When a function reaches a return statement it will stop executing",
+    "Can contain parameters",
+    "Variables declared within a JavaScript function, become local to the function.",
+  ],
   "// Some code goes here"
 );
 const jsLoops = new contentConstructor(
   "loops",
   "#loops",
-  "",
+  "Loops allow us to iterate through",
   ["Loop point 1", "Loop point 2", "Loop point 3"],
   "// Some code goes here"
 );
@@ -193,13 +314,6 @@ const jsMaps = new contentConstructor(
   "#maps",
   "",
   ["Map point 1", "Map point 2", "Map point 3"],
-  "// Some code goes here"
-);
-const jsFunctions = new contentConstructor(
-  "functions",
-  "#functions",
-  "",
-  ["functions point 1", "functions point 2", "functions point 3"],
   "// Some code goes here"
 );
 const jsObjects = new contentConstructor(
@@ -298,12 +412,18 @@ contentArray.push(
   jsSyntax,
   jsComments,
   jsVariables,
+  jsLet,
+  jsConst,
   jsOperators,
   ArithmeticOp,
+  assignmentOp,
+  comparisonOp,
+  logicalOp,
+  typeOp,
   jsDataTypes,
+  jsFunctions,
   jsLoops,
   jsMaps,
-  jsFunctions,
   jsObjects,
   jsArrays,
   jsEvents,
